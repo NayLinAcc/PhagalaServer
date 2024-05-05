@@ -24,12 +24,9 @@ connectDB();
 app.use('/api/todo/auth', require('./routes/user'));
 
 // Start the server
-const PORT = process.env.PORT || 3000;
-const server = app.listen(PORT, () => {
-  const address = server.address();
-  const host = address.address === '::' ? 'localhost' : address.address;
-  console.log(`Server running on http://${host}:${PORT}`.red.underline.bold);
 
-  // Log the IP address
-  console.log(`Server IP address: ${address.address}`);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,
+  console.log(`Server running mode on port ${PORT}`.red.underline.bold)
+
+);
